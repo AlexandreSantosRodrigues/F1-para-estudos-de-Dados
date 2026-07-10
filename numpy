@@ -1,0 +1,40 @@
+import pandas as pd
+import numpy as np
+
+caminho_arquivo = '/kaggle/input/datasets/alexandresanto/f1-races/f1_races.csv'
+
+df_completo = pd.read_csv(caminho_arquivo)
+
+df_sem_url = df_completo.drop(columns=['url'])
+
+df_2026 = df_sem_url[df_sem_url['season'] == 2026]
+df_2025 = df_sem_url[df_sem_url['season'] == 2026]
+
+matriz_final = df_2026.to_numpy()
+
+print(matriz_final)
+
+[2026 1 'Australian Grand Prix' 'albert_park' '2026-03-08' '04:00:00Z']
+ [2026 2 'Chinese Grand Prix' 'shanghai' '2026-03-15' '07:00:00Z']
+ [2026 3 'Japanese Grand Prix' 'suzuka' '2026-03-29' '05:00:00Z']
+ [2026 4 'Miami Grand Prix' 'miami' '2026-05-03' '20:00:00Z']
+ [2026 5 'Canadian Grand Prix' 'villeneuve' '2026-05-24' '20:00:00Z']
+ [2026 6 'Monaco Grand Prix' 'monaco' '2026-06-07' '13:00:00Z']
+ [2026 7 'Barcelona Grand Prix' 'catalunya' '2026-06-14' '13:00:00Z']
+ [2026 8 'Austrian Grand Prix' 'red_bull_ring' '2026-06-28' '13:00:00Z']
+ [2026 9 'British Grand Prix' 'silverstone' '2026-07-05' '14:00:00Z']
+ [2026 10 'Belgian Grand Prix' 'spa' '2026-07-19' '13:00:00Z']
+ [2026 11 'Hungarian Grand Prix' 'hungaroring' '2026-07-26' '13:00:00Z']
+ [2026 12 'Dutch Grand Prix' 'zandvoort' '2026-08-23' '13:00:00Z']
+ [2026 13 'Italian Grand Prix' 'monza' '2026-09-06' '13:00:00Z']
+ [2026 14 'Spanish Grand Prix' 'madring' '2026-09-13' '13:00:00Z']
+ [2026 15 'Azerbaijan Grand Prix' 'baku' '2026-09-26' '11:00:00Z']
+ [2026 16 'Singapore Grand Prix' 'marina_bay' '2026-10-11' '12:00:00Z']
+ [2026 17 'United States Grand Prix' 'americas' '2026-10-25' '20:00:00Z']
+ [2026 18 'Mexico City Grand Prix' 'rodriguez' '2026-11-01' '20:00:00Z']
+ [2026 19 'Brazilian Grand Prix' 'interlagos' '2026-11-08' '17:00:00Z']
+ [2026 20 'Las Vegas Grand Prix' 'vegas' '2026-11-22' '04:00:00Z']
+ [2026 21 'Qatar Grand Prix' 'losail' '2026-11-29' '16:00:00Z']
+ [2026 22 'Abu Dhabi Grand Prix' 'yas_marina' '2026-12-06' '13:00:00Z']]
+
+ 
