@@ -1,0 +1,26 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df_2025['date'] = pd.to_datetime(df_2025['date'])
+df_2025['time_numeric'] = pd.to_timedelta(df_2025['time']).dt.components['hours']
+
+df_2025 = df_2025.sort_values(by='date')
+
+plt.figure(figsize=(12, 6))
+
+plt.plot(df_2025['date'], df_2025['time_numeric'], marker='o', color='blue', linewidth=2)
+
+plt.title('Horário de Largada ao Longo do Ano de 2025', fontsize=14, fontweight='bold')
+
+plt.xlabel('Data da Corrida(2025)', fontsize=12)
+
+plt.ylabel('Horário de Largada(24h)', fontsize=12)
+
+plt.grid(True, linestyle='--', alpha=0.6)
+
+plt.xticks(rotation=45)
+
+plt.tight_layout()
+
+plt.show()
+
